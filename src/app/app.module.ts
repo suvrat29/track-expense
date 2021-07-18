@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AppHttpInterceptor } from './auth-module/app.interceptor';
 import { HotToastModule } from '@ngneat/hot-toast';
+import { AppLayoutModule } from './layout/app.layout.module';
 
 @NgModule({
   declarations: [
@@ -15,13 +16,14 @@ import { HotToastModule } from '@ngneat/hot-toast';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    HotToastModule.forRoot()
+    HotToastModule.forRoot(),
+    AppLayoutModule
   ],
   providers: [
     {
-    provide: HTTP_INTERCEPTORS,
-    useClass: AppHttpInterceptor,
-    multi: true
+      provide: HTTP_INTERCEPTORS,
+      useClass: AppHttpInterceptor,
+      multi: true
     }
   ],
   bootstrap: [AppComponent]
