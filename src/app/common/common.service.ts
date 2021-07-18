@@ -14,4 +14,8 @@ export class AppCommonService {
   getUserData() {
     return this.http.get(API_URL + this.baseUrl + 'data');
   }
+
+  checkAppUpdates() {
+
+  }
 }

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AppCommonService } from '../common/common.service';
 
 @Component({
   selector: 'app-layout',
@@ -6,6 +7,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.layout.component.scss']
 })
 
-export class AppLayoutComponent {
-  constructor() { }
+export class AppLayoutComponent implements OnInit {
+  isAppUpdated: boolean = true;
+
+  constructor(private commonService: AppCommonService) { }
+
+  ngOnInit() {
+    this.checkUpdates();
+  }
+
+  checkUpdates() {
+    this.commonService.checkAppUpdates();
+  }
+
+  hideUpdateBanner() {
+    this.isAppUpdated = false;
+  }
 }

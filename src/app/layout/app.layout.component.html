@@ -1,4 +1,5 @@
 <app-layout-header></app-layout-header>
-<div class="sm:container sm:mx-auto h-screensize">
+<app-update-banner *ngIf="isAppUpdated" (isBannerDismissed)="hideUpdateBanner()"></app-update-banner>
+<div class="sm:container sm:mx-auto" [ngClass]="{'h-screensize': !isAppUpdated, 'h-screensize-withbanner': isAppUpdated}">
   <router-outlet></router-outlet>
 </div>
