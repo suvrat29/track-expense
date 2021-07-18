@@ -8,7 +8,7 @@ import { AppCommonService } from '../common/common.service';
 })
 
 export class AppLayoutComponent implements OnInit {
-  isAppUpdated: boolean = true;
+  isAppUpdated: boolean = false;
 
   constructor(private commonService: AppCommonService) { }
 
