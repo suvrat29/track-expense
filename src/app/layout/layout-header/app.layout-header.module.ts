@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { AppLayoutHeaderComponent } from './app.layout-header.component';
 
 @NgModule({
@@ -7,7 +8,8 @@ import { AppLayoutHeaderComponent } from './app.layout-header.component';
     AppLayoutHeaderComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   exports: [
     AppLayoutHeaderComponent

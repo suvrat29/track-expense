@@ -7,6 +7,16 @@ const routes: Routes = [
     path: '',
     loadChildren: () => import('./home/app.home.module').then(m => m.AppHomeModule),
     canActivate: [AppGuard]
+  },
+  {
+    path: 'activity',
+    loadChildren: () => import('./activity/app.activity.module').then(m => m.AppActivityModule),
+    canActivate: [AppGuard]
+  },
+  {
+    path: 'user-profile',
+    loadChildren: () => import('./user-profile/app.user-profile.module').then(m => m.AppUserProfileModule),
+    canActivate: [AppGuard]
   }
 ];
 

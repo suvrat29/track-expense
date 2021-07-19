@@ -38,12 +38,18 @@ export class AppLayoutHeaderComponent implements OnInit {
   imageLink: string = "";
   firstName: string = "";
   lastName: string = "";
-  selectedMenu: number = 0;
+  selectedMenu: number = 1;
 
-  constructor(private commonService: AppCommonService) { }
+  constructor(private commonService: AppCommonService) {
+    if (window.location.pathname == '/content/')
+      this.selectedMenu = 1;
+    else if (window.location.pathname == '/content/activity')
+      this.selectedMenu = 3;
+    else
+      this.selectedMenu = 4;
+  }
 
   ngOnInit() {
-    this.selectedMenu = 1;
     this.getUserDetails();
   }
 
