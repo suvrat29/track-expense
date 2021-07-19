@@ -1,5 +1,5 @@
 //import { animate, state, style, transition, trigger } from '@angular/animations';
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { AppCommonService } from '../../common/common.service';
 
 @Component({
@@ -27,6 +27,11 @@ import { AppCommonService } from '../../common/common.service';
 })
 
 export class AppLayoutHeaderComponent implements OnInit {
+  @HostListener('document:click', ['$event']) onDocumentClick(event: any) {
+    this.profileMenu = false;
+    this.profileMenu = false;
+  }
+
   profileMenu: boolean = false;
   mobileHeaderMenu: boolean = false;
   isImagePresent: boolean = false;
