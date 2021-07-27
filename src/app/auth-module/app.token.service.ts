@@ -23,4 +23,9 @@ export class AppTokenService {
   removeToken(tokenName: string): void {
     localStorage.removeItem(tokenName);
   }
+
+  clearTokens() {
+    localStorage.removeItem(ACCESS_TOKEN);
+    localStorage.removeItem("te.email");
+  }
 }

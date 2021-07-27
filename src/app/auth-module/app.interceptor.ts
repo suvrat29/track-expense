@@ -41,7 +41,8 @@ export class AppHttpInterceptor implements HttpInterceptor {
     }), catchError((error: HttpErrorResponse) => {
       //console.log(error.error.error);
       if (error.status === 401) {
-        this.router.navigate(['login']).then(_ => console.log('redirecting to login'));
+        this.tokenService.clearTokens();
+        window.location.href = "../login/";
       }
       return throwError(error);
     }));

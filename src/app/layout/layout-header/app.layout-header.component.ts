@@ -1,5 +1,7 @@
 //import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, HostListener, OnInit } from '@angular/core';
+import { HotToastService } from '@ngneat/hot-toast';
+import { AppTokenService } from '../../auth-module/app.token.service';
 import { AppCommonService } from '../../common/common.service';
 
 @Component({
@@ -40,7 +42,7 @@ export class AppLayoutHeaderComponent implements OnInit {
   lastName: string = "";
   selectedMenu: number = 1;
 
-  constructor(private commonService: AppCommonService) {
+  constructor(private commonService: AppCommonService, private toaster: HotToastService, private tokenService: AppTokenService) {
     if (window.location.pathname == '/content/')
       this.selectedMenu = 1;
     else if (window.location.pathname == '/content/activity')
@@ -70,5 +72,11 @@ export class AppLayoutHeaderComponent implements OnInit {
     }, error => {
       this.isImagePresent = false;
     });
+  }
+
+  logout() {
+    this.tokenService.clearTokens();
+    this.toaster.show("Successfully logged out");
+    window.location.href = "../login/";
   }
 }

@@ -21,7 +21,9 @@ export class AppGuard implements CanActivate {
       return true;
     }
 
-    this.router.navigate(['/login']).then(_ => false);
+    this.tokenService.clearTokens();
+
+    window.location.href = "../login/";
 
     return false;
   }
