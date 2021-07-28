@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ModalModule } from '../common/modal-component/modal.module';
 import { AppHomeComponent } from './app.home.component';
 
 const routes: Routes = [
@@ -14,7 +15,8 @@ const routes: Routes = [
     AppHomeComponent
   ],
   imports: [
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    ModalModule
   ]
 })
 
