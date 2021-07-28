@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ModalModule } from '../common/modal-component/modal.module';
@@ -15,6 +16,7 @@ const routes: Routes = [
     AppHomeComponent
   ],
   imports: [
+    CommonModule,
     RouterModule.forChild(routes),
     ModalModule
   ]

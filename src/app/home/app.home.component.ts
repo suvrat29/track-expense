@@ -8,15 +8,19 @@ import { ModalService } from '../common/modal-component/modal.service';
 })
 
 export class AppHomeComponent implements OnInit {
+  showModal: boolean = false;
+
   constructor(private modalService: ModalService) { }
 
-  ngOnInit() { }
+  ngOnInit() {  }
 
   openModal(id: string) {
-    this.modalService.open(id);
+    this.showModal = true;
+    setTimeout(() => { this.modalService.open(id); }, 100);
   }
 
   closeModal(id: string) {
     this.modalService.close(id);
+    this.showModal = false;
   }
 }
