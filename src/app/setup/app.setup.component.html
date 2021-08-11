@@ -13,7 +13,7 @@
       </div>
     </div>
 
-    <div class="shadow sm:rounded-md sm:overflow-hidden">
+    <div class="bg-white shadow sm:rounded-md sm:overflow-hidden">
       <div class="flex">
         <div class="py-4 px-6 text-sm font-medium cursor-pointer" (click)="selectedTab = 1" [ngClass]="{'text-gray-500': selectedTab != 1, 'text-indigo-400 border-b-2 border-indigo-400 pointer-events-none': selectedTab == 1}">
           <a href="javascript:;">Categories</a>
@@ -21,13 +21,21 @@
         <div class="py-4 px-6 text-sm font-medium cursor-pointer" (click)="selectedTab = 2" [ngClass]="{'text-gray-500': selectedTab != 2, 'text-indigo-400 border-b-2 border-indigo-400 pointer-events-none': selectedTab == 2}">
           <a href="javascript:;">Sub Categories</a>
         </div>
+        <div class="ml-auto mt-3 pr-4">
+          <button type="button" class="inline-flex items-center px-2 py-1 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+            </svg>
+            New
+          </button>
+        </div>
       </div>
       <div class="block" aria-hidden="true">
         <div class="py-0">
           <div class="border-t border-gray-200"></div>
         </div>
       </div>
-      <div class="block py-4 px-6">
+      <div class="block px-6">
         <ng-container *ngIf="selectedTab == 1">
           <setup-category></setup-category>
         </ng-container>
