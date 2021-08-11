@@ -1,0 +1,40 @@
+<div class="mx-6 py-9 sm:container sm:mx-auto sm:py-4">
+  <div class="">
+    <div class="px-4 sm:px-0">
+      <h3 class="text-lg font-medium leading-6 text-gray-900">Setup</h3>
+      <p class="mt-1 text-sm text-gray-600">
+        Create categories, subcategories etc.
+      </p>
+    </div>
+
+    <div class="block" aria-hidden="true">
+      <div class="py-5">
+        <div class="border-t border-gray-200"></div>
+      </div>
+    </div>
+
+    <div class="shadow sm:rounded-md sm:overflow-hidden">
+      <div class="flex">
+        <div class="py-4 px-6 text-sm font-medium cursor-pointer" (click)="selectedTab = 1" [ngClass]="{'text-gray-500': selectedTab != 1, 'text-indigo-400 border-b-2 border-indigo-400 pointer-events-none': selectedTab == 1}">
+          <a href="javascript:;">Categories</a>
+        </div>
+        <div class="py-4 px-6 text-sm font-medium cursor-pointer" (click)="selectedTab = 2" [ngClass]="{'text-gray-500': selectedTab != 2, 'text-indigo-400 border-b-2 border-indigo-400 pointer-events-none': selectedTab == 2}">
+          <a href="javascript:;">Sub Categories</a>
+        </div>
+      </div>
+      <div class="block" aria-hidden="true">
+        <div class="py-0">
+          <div class="border-t border-gray-200"></div>
+        </div>
+      </div>
+      <div class="block py-4 px-6">
+        <ng-container *ngIf="selectedTab == 1">
+          <setup-category></setup-category>
+        </ng-container>
+        <ng-container *ngIf="selectedTab == 2">
+          <setup-subcategory></setup-subcategory>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>

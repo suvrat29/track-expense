@@ -23,8 +23,8 @@
         <div class="hidden sm:block sm:ml-6">
           <div class="flex space-x-4">
             <a href="javascript:;" class="px-3 py-2 rounded-md text-sm font-medium" aria-current="page" [ngClass]="{'bg-gray-900 text-white': selectedMenu == 1, 'text-gray-300 hover:bg-gray-700 hover:text-white': selectedMenu != 1}" [routerLink]="['./']" (click)="selectedMenu = 1">Home</a>
-            <!--<a href="javascript:;" class="px-3 py-2 rounded-md text-sm font-medium" [ngClass]="{'bg-gray-900 text-white': selectedMenu == 2, 'text-gray-300 hover:bg-gray-700 hover:text-white': selectedMenu != 2}">Schedule</a>-->
-            <a href="javascript:;" class="px-3 py-2 rounded-md text-sm font-medium" [ngClass]="{'bg-gray-900 text-white': selectedMenu == 3, 'text-gray-300 hover:bg-gray-700 hover:text-white': selectedMenu != 3}" [routerLink]="['./activity']" (click)="selectedMenu = 3">Activity</a>
+            <a href="javascript:;" class="px-3 py-2 rounded-md text-sm font-medium" [ngClass]="{'bg-gray-900 text-white': selectedMenu == 2, 'text-gray-300 hover:bg-gray-700 hover:text-white': selectedMenu != 2}" [routerLink]="['./activity']" (click)="selectedMenu = 2">Activity</a>
+            <a href="javascript:;" class="px-3 py-2 rounded-md text-sm font-medium" [ngClass]="{'bg-gray-900 text-white': selectedMenu == 3, 'text-gray-300 hover:bg-gray-700 hover:text-white': selectedMenu != 3}" [routerLink]="['./app-setup']" (click)="selectedMenu = 3">Setup</a>
             <!--<a href="javascript:;" class="px-3 py-2 rounded-md text-sm font-medium" [ngClass]="{'bg-gray-900 text-white': selectedMenu == 4, 'text-gray-300 hover:bg-gray-700 hover:text-white': selectedMenu != 4}">Reports</a>-->
           </div>
         </div>
@@ -82,8 +82,8 @@
   <div class="sm:hidden" id="mobile-menu" *ngIf="mobileHeaderMenu">
     <div class="px-2 pt-2 pb-3 space-y-1">
       <a href="javascript:;" class="block px-3 py-2 rounded-md text-base font-medium" aria-current="page" [ngClass]="{'bg-gray-900 text-white': selectedMenu == 1, 'text-gray-300 hover:bg-gray-700 hover:text-white': selectedMenu != 1}" [routerLink]="['./']" (click)="selectedMenu = 1">Home</a>
-      <!--<a href="javascript:;" class="block px-3 py-2 rounded-md text-base font-medium" [ngClass]="{'bg-gray-900 text-white': selectedMenu == 2, 'text-gray-300 hover:bg-gray-700 hover:text-white': selectedMenu != 2}">Schedule</a>-->
-      <a href="javascript:;" class="block px-3 py-2 rounded-md text-base font-medium" [ngClass]="{'bg-gray-900 text-white': selectedMenu == 3, 'text-gray-300 hover:bg-gray-700 hover:text-white': selectedMenu != 3}" [routerLink]="['./activity']" (click)="selectedMenu = 3">Activity</a>
+      <a href="javascript:;" class="block px-3 py-2 rounded-md text-base font-medium" [ngClass]="{'bg-gray-900 text-white': selectedMenu == 2, 'text-gray-300 hover:bg-gray-700 hover:text-white': selectedMenu != 2}" [routerLink]="['./activity']" (click)="selectedMenu = 2">Activity</a>
+      <a href="javascript:;" class="block px-3 py-2 rounded-md text-base font-medium" [ngClass]="{'bg-gray-900 text-white': selectedMenu == 3, 'text-gray-300 hover:bg-gray-700 hover:text-white': selectedMenu != 3}" [routerLink]="['./app-setup']" (click)="selectedMenu = 3">Setup</a>
       <!--<a href="javascript:;" class="block px-3 py-2 rounded-md text-base font-medium" [ngClass]="{'bg-gray-900 text-white': selectedMenu == 4, 'text-gray-300 hover:bg-gray-700 hover:text-white': selectedMenu != 4}">Reports</a>-->
     </div>
   </div>

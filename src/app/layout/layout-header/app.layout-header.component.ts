@@ -46,9 +46,11 @@ export class AppLayoutHeaderComponent implements OnInit {
     if (window.location.pathname === "/content/") {
       this.selectedMenu = 1;
     } else if (window.location.pathname === "/content/activity") {
+      this.selectedMenu = 2;
+    } else if (window.location.pathname === "/content/app-setup") {
       this.selectedMenu = 3;
     } else {
-      this.selectedMenu = 4;
+      this.selectedMenu = 5;
     }
   }
 

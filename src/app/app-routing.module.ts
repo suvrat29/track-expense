@@ -5,17 +5,22 @@ import { AppGuard } from "./app.guard";
 const routes: Routes = [
   {
     path: "",
-    loadChildren: () => import("./home/app.home.module").then(m => m.AppHomeModule),
+    loadChildren: () => import("./home/app.home.module").then((m) => m.AppHomeModule),
     canActivate: [AppGuard]
   },
   {
     path: "activity",
-    loadChildren: () => import("./activity/app.activity.module").then(m => m.AppActivityModule),
+    loadChildren: () => import("./activity/app.activity.module").then((m) => m.AppActivityModule),
     canActivate: [AppGuard]
   },
   {
     path: "user-profile",
-    loadChildren: () => import("./user-profile/app.user-profile.module").then(m => m.AppUserProfileModule),
+    loadChildren: () => import("./user-profile/app.user-profile.module").then((m) => m.AppUserProfileModule),
+    canActivate: [AppGuard]
+  },
+  {
+    path: "app-setup",
+    loadChildren: () => import("./setup/app.setup.module").then((m) => m.AppSetupModule),
     canActivate: [AppGuard]
   }
 ];
