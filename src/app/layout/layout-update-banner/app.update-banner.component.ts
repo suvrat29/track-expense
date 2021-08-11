@@ -1,9 +1,9 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Output } from "@angular/core";
 
 @Component({
-  selector: 'app-update-banner',
-  templateUrl: './app.update-banner.component.html',
-  styleUrls: ['./app.update-banner.component.scss'],
+  selector: "app-update-banner",
+  templateUrl: "./app.update-banner.component.html",
+  styleUrls: ["./app.update-banner.component.scss"],
 })
 
 export class AppUpdateBannerComponent {

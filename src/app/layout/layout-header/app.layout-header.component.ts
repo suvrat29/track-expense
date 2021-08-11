@@ -43,12 +43,13 @@ export class AppLayoutHeaderComponent implements OnInit {
   selectedMenu: number = 1;
 
   constructor(private commonService: AppCommonService, private toaster: HotToastService, private tokenService: AppTokenService) {
-    if (window.location.pathname == "/content/")
+    if (window.location.pathname === "/content/") {
       this.selectedMenu = 1;
-    else if (window.location.pathname == "/content/activity")
+    } else if (window.location.pathname === "/content/activity") {
       this.selectedMenu = 3;
-    else
+    } else {
       this.selectedMenu = 4;
+    }
   }
 
   ngOnInit() {

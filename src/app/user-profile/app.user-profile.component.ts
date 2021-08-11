@@ -42,7 +42,7 @@ export class AppUserProfileComponent implements OnInit {
       this.currencyList = response.currencylist;
 
       this._pageLoad = false;
-    }, error => {
+    }, (error) => {
       this._pageLoad = false;
     });
   }
@@ -71,7 +71,7 @@ export class AppUserProfileComponent implements OnInit {
           this._formSubmit = false;
           this.toast.error("Failed to update profile details");
         }
-      }, error => {
+      }, (error) => {
         this._formSubmit = false;
       });
     } else {
