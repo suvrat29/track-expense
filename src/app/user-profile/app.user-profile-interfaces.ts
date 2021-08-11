@@ -21,3 +21,11 @@ export interface ILocaleCurrencyList {
   currency: string;
   currencycode: string;
 }
+
+export interface IUserProfileUpdateData {
+  firstname: string;
+  lastname: string;
+  avatar: string;
+  region: number;
+  currency: number;
+}

@@ -1,7 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { environment } from "src/environments/environment";
-import { IUserProfileData } from "../interfaces/user-profile-interfaces";
+import { IUserProfileData, IUserProfileUpdateData } from "./app.user-profile-interfaces";
 
 const API_URL = environment.apiUrl;
 
@@ -14,5 +14,9 @@ export class AppUserProfileService {
 
   getProfileData() {
     return this.http.get<IUserProfileData>(API_URL + this.baseUrl + 'get-profile-data');
+  }
+
+  updateProfileData(postData: IUserProfileUpdateData) {
+    return this.http.post<boolean>(API_URL + this.baseUrl + 'update-user-profile', postData);
   }
 }

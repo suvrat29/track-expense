@@ -58,7 +58,7 @@ export class AppLayoutHeaderComponent implements OnInit {
   getUserDetails() {
     this.commonService.getUserData().subscribe((response: any) => {
       if (response) {
-        if (response.avatar.length > 0) {
+        if (response.avatar && response.avatar.length > 0) {
           this.isImagePresent = true;
           this.imageLink = response.avatar;
         } else {

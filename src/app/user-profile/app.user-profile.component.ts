@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { HotToastService } from '@ngneat/hot-toast';
-import { ILocaleCurrencyList, ILocaleRegionList, IUserProfileData } from '../interfaces/user-profile-interfaces';
+import { ILocaleCurrencyList, ILocaleRegionList, IUserProfileData, IUserProfileUpdateData } from './app.user-profile-interfaces';
 import { AppUserProfileService } from './app.user-profile.service';
 
 @Component({
@@ -56,8 +56,39 @@ export class AppUserProfileComponent implements OnInit {
   }
 
   updateUserProfile(formData: FormGroup) {
-    console.log(formData);
     this._formSubmit = true;
-    setTimeout(() => { this._formSubmit = false; }, 2000);
+    if (formData.status === "VALID") {
+      let postData: IUserProfileUpdateData = this.mapData(formData);
+      this.profSvc.updateProfileData(postData).pipe(this.toast.observe({
+        loading: "Updating your profile, please wait...",
+        success: "Your profile details have been updated",
+        error: "Failed to update profile details"
+      })).subscribe((response: boolean) => {
+        if (response) {
+          this._formSubmit = false;
+        }
+        else {
+          this._formSubmit = false;
+          this.toast.error("Failed to update profile details");
+        }
+      }, error => {
+        this._formSubmit = false;
+      });
+    } else {
+      this.toast.error("Data entered in the form is invalid");
+      this._formSubmit = true;
+    }
+  }
+
+  mapData(formData: FormGroup): IUserProfileUpdateData {
+    let data: IUserProfileUpdateData = {} as IUserProfileUpdateData;
+
+    data.avatar = formData.controls["avatar"].value == null ? "" : formData.controls["avatar"].value;
+    data.firstname = formData.controls["firstname"].value;
+    data.lastname = formData.controls["lastname"].value;
+    data.region = formData.controls["region"].value;
+    data.currency = formData.controls["currency"].value;
+
+    return data;
   }
 }
