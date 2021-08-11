@@ -1,8 +1,8 @@
-import { TestBed } from '@angular/core/testing';
+import { TestBed } from "@angular/core/testing";
 
-import { AppGuard } from './app.guard';
+import { AppGuard } from "./app.guard";
 
-describe('AppGuard', () => {
+describe("AppGuard", () => {
   let guard: AppGuard;
 
   beforeEach(() => {
@@ -10,7 +10,7 @@ describe('AppGuard', () => {
     guard = TestBed.inject(AppGuard);
   });
 
-  it('should be created', () => {
+  it("should be created", () => {
     expect(guard).toBeTruthy();
   });
 });

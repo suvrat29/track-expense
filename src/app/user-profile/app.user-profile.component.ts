@@ -1,13 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { HotToastService } from '@ngneat/hot-toast';
-import { ILocaleCurrencyList, ILocaleRegionList, IUserProfileData, IUserProfileUpdateData } from './app.user-profile-interfaces';
-import { AppUserProfileService } from './app.user-profile.service';
+import { Component, OnInit } from "@angular/core";
+import { FormControl, FormGroup, Validators } from "@angular/forms";
+import { HotToastService } from "@ngneat/hot-toast";
+import { ILocaleCurrencyList, ILocaleRegionList, IUserProfileData, IUserProfileUpdateData } from "./app.user-profile-interfaces";
+import { AppUserProfileService } from "./app.user-profile.service";
 
 @Component({
-  selector: 'user-profile',
-  templateUrl: './app.user-profile.component.html',
-  styleUrls: ['./app.user-profile.component.scss'],
+  selector: "user-profile",
+  templateUrl: "./app.user-profile.component.html",
+  styleUrls: ["./app.user-profile.component.scss"],
 })
 
 export class AppUserProfileComponent implements OnInit {

@@ -3,7 +3,7 @@ import { environment } from "src/environments/environment";
 
 const ACCESS_TOKEN = environment.accessToken;
 
-@Injectable({ providedIn: 'root' })
+@Injectable({ providedIn: "root" })
 
 export class AppTokenService {
   constructor() { }

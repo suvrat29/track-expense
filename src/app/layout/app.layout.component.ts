@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { AppCommonService } from '../common/common.service';
+import { Component, OnInit } from "@angular/core";
+import { AppCommonService } from "../common/common.service";
 
 @Component({
-  selector: 'app-layout',
-  templateUrl: './app.layout.component.html',
-  styleUrls: ['./app.layout.component.scss']
+  selector: "app-layout",
+  templateUrl: "./app.layout.component.html",
+  styleUrls: ["./app.layout.component.scss"]
 })
 
 export class AppLayoutComponent implements OnInit {

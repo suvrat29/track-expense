@@ -1,21 +1,21 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { AppGuard } from './app.guard';
+import { NgModule } from "@angular/core";
+import { RouterModule, Routes } from "@angular/router";
+import { AppGuard } from "./app.guard";
 
 const routes: Routes = [
   {
-    path: '',
-    loadChildren: () => import('./home/app.home.module').then(m => m.AppHomeModule),
+    path: "",
+    loadChildren: () => import("./home/app.home.module").then(m => m.AppHomeModule),
     canActivate: [AppGuard]
   },
   {
-    path: 'activity',
-    loadChildren: () => import('./activity/app.activity.module').then(m => m.AppActivityModule),
+    path: "activity",
+    loadChildren: () => import("./activity/app.activity.module").then(m => m.AppActivityModule),
     canActivate: [AppGuard]
   },
   {
-    path: 'user-profile',
-    loadChildren: () => import('./user-profile/app.user-profile.module').then(m => m.AppUserProfileModule),
+    path: "user-profile",
+    loadChildren: () => import("./user-profile/app.user-profile.module").then(m => m.AppUserProfileModule),
     canActivate: [AppGuard]
   }
 ];

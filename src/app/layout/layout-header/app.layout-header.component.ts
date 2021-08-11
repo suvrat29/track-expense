@@ -1,13 +1,13 @@
 //import { animate, state, style, transition, trigger } from '@angular/animations';
-import { Component, HostListener, OnInit } from '@angular/core';
-import { HotToastService } from '@ngneat/hot-toast';
-import { AppTokenService } from '../../auth-module/app.token.service';
-import { AppCommonService } from '../../common/common.service';
+import { Component, HostListener, OnInit } from "@angular/core";
+import { HotToastService } from "@ngneat/hot-toast";
+import { AppTokenService } from "../../auth-module/app.token.service";
+import { AppCommonService } from "../../common/common.service";
 
 @Component({
-  selector: 'app-layout-header',
-  templateUrl: './app.layout-header.component.html',
-  styleUrls: ['./app.layout-header.component.scss'],
+  selector: "app-layout-header",
+  templateUrl: "./app.layout-header.component.html",
+  styleUrls: ["./app.layout-header.component.scss"],
   //animations: [                  //Makes UI Clunky
   //  trigger('profileMenuAnimate', [
   //    state('Leaving', style({
@@ -29,7 +29,7 @@ import { AppCommonService } from '../../common/common.service';
 })
 
 export class AppLayoutHeaderComponent implements OnInit {
-  @HostListener('document:click', ['$event']) onDocumentClick(event: any) {
+  @HostListener("document:click", ["$event"]) onDocumentClick(event: any) {
     this.profileMenu = false;
     this.profileMenu = false;
   }
@@ -43,9 +43,9 @@ export class AppLayoutHeaderComponent implements OnInit {
   selectedMenu: number = 1;
 
   constructor(private commonService: AppCommonService, private toaster: HotToastService, private tokenService: AppTokenService) {
-    if (window.location.pathname == '/content/')
+    if (window.location.pathname == "/content/")
       this.selectedMenu = 1;
-    else if (window.location.pathname == '/content/activity')
+    else if (window.location.pathname == "/content/activity")
       this.selectedMenu = 3;
     else
       this.selectedMenu = 4;

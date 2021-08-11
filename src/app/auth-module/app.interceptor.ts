@@ -1,9 +1,9 @@
-import { Injectable } from '@angular/core';
-import { HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpResponse } from '@angular/common/http';
-import { Router } from '@angular/router';
-import { throwError } from 'rxjs';
-import { AppTokenService } from './app.token.service';
-import { catchError, map } from 'rxjs/operators';
+import { Injectable } from "@angular/core";
+import { HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpResponse } from "@angular/common/http";
+import { Router } from "@angular/router";
+import { throwError } from "rxjs";
+import { AppTokenService } from "./app.token.service";
+import { catchError, map } from "rxjs/operators";
 
 @Injectable()
 
@@ -16,21 +16,21 @@ export class AppHttpInterceptor implements HttpInterceptor {
     if (loginToken) {
       request = request.clone({
         setHeaders: {
-          Authorization: 'Bearer ' + loginToken
+          Authorization: "Bearer " + loginToken
         }
       });
     }
 
-    if (!request.headers.has('Content-Type')) {
+    if (!request.headers.has("Content-Type")) {
       request = request.clone({
         setHeaders: {
-          'content-type': 'application/json'
+          "content-type": "application/json"
         }
       });
     }
 
     request = request.clone({
-      headers: request.headers.set('Accept', 'application/json')
+      headers: request.headers.set("Accept", "application/json")
     });
 
     return next.handle(request).pipe(map((event: HttpEvent<any>) => {

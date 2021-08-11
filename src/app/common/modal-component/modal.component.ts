@@ -1,10 +1,10 @@
-import { Component, ViewEncapsulation, ElementRef, Input, OnInit, OnDestroy } from '@angular/core';
-import { ModalService } from './modal.service';
+import { Component, ViewEncapsulation, ElementRef, Input, OnInit, OnDestroy } from "@angular/core";
+import { ModalService } from "./modal.service";
 
 @Component({
-  selector: 'te-modal',
-  templateUrl: 'modal.component.html',
-  styleUrls: ['modal.component.scss'],
+  selector: "te-modal",
+  templateUrl: "modal.component.html",
+  styleUrls: ["modal.component.scss"],
   encapsulation: ViewEncapsulation.None
 })
 
@@ -19,7 +19,7 @@ export class ModalComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     // ensure id attribute exists
     if (!this.id) {
-      console.error('modal must have an id');
+      //console.error("modal must have an id");
       return;
     }
 
@@ -27,8 +27,8 @@ export class ModalComponent implements OnInit, OnDestroy {
     document.body.appendChild(this.element);
 
     // close modal on background click
-    this.element.addEventListener('click', (el: any) => {
-      if (el.target.className === 'te-modal') {
+    this.element.addEventListener("click", (el: any) => {
+      if (el.target.className === "te-modal") {
         this.close();
       }
     });
@@ -45,13 +45,13 @@ export class ModalComponent implements OnInit, OnDestroy {
 
   // open modal
   open(): void {
-    this.element.style.display = 'block';
-    document.body.classList.add('te-modal-open');
+    this.element.style.display = "block";
+    document.body.classList.add("te-modal-open");
   }
 
   // close modal
   close(): void {
-    this.element.style.display = 'none';
-    document.body.classList.remove('te-modal-open');
+    this.element.style.display = "none";
+    document.body.classList.remove("te-modal-open");
   }
 }
