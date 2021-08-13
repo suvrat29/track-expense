@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { Subject } from "rxjs";
 
 @Component({
   selector: "app-setup",
@@ -9,4 +10,9 @@ import { Component } from "@angular/core";
 export class AppSetupComponent {
   selectedTab: number = 1;
   editCategory: boolean = false;
+  addNewCategory: Subject<boolean> = new Subject();
+
+  insertNewCategory() {
+    this.addNewCategory.next(true);
+  }
 }

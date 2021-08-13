@@ -29,7 +29,7 @@
             <span class="pl-1">Edit</span>
           </button>
 
-          <button type="button" class="inline-flex items-center ml-2 px-2 py-1 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+          <button type="button" class="inline-flex items-center ml-2 px-2 py-1 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" (click)="insertNewCategory()">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
             </svg>
@@ -53,7 +53,7 @@
       </div>
       <div class="block px-6">
         <ng-container *ngIf="selectedTab == 1">
-          <setup-category [enableActions]="editCategory"></setup-category>
+          <setup-category [enableActions]="editCategory" [addCategory]="addNewCategory"></setup-category>
         </ng-container>
         <ng-container *ngIf="selectedTab == 2">
           <setup-subcategory></setup-subcategory>
