@@ -8,4 +8,5 @@ import { Component } from "@angular/core";
 
 export class AppSetupComponent {
   selectedTab: number = 1;
+  editCategory: boolean = false;
 }
