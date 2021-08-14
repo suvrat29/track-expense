@@ -1,9 +1,8 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { environment } from "src/environments/environment";
 import { IAddNewCategory, ICategoryData, IUpdateCategory } from "./app.setup.interface";
 
-const API_URL = environment.apiUrl;
+const API_URL = process.env.apiUrl;
 
 @Injectable()
 

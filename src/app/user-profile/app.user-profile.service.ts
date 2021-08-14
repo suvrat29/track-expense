@@ -1,9 +1,8 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { environment } from "src/environments/environment";
 import { IUserProfileData, IUserProfileUpdateData } from "./app.user-profile-interfaces";
 
-const API_URL = environment.apiUrl;
+const API_URL = process.env.apiUrl;
 
 @Injectable()
 
