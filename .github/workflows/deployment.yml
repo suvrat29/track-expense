@@ -30,8 +30,7 @@ jobs:
         run: |
           npm install
           npm run-script build
-        with:
-          env: # environment variables
+        env: # environment variables
           production: ${{ secrets.APP_PRODUCTION }}
           accessToken: ${{ secrets.APP_ACCESSTOKEN }}
           apiUrl: ${{ secrets.APP_APIURL }}
