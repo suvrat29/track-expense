@@ -1,6 +1,6 @@
 module.exports = {
     prefix: "",
-    //purge: {
+    //purge: {        //TODO: Fix this
     //  enabled: process.env.NODE_ENV === "production",
     //  content: [
     //    "./src/**/*.{html,ts}",
