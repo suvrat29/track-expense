@@ -26,7 +26,7 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
           branch: production # The branch the action should deploy to.
-          folder: deploy # The folder the action should deploy.
+          folder: ../deploy # The folder the action should deploy.
         env: # Or as an environment variable
           production: ${{ secrets.APP_PRODUCTION }}
           accessToken: ${{ secrets.APP_ACCESSTOKEN }}
