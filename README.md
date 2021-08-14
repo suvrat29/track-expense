@@ -1,5 +1,7 @@
 # TrackExpense
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/53747bd0e6f0454abf7554b8b7f90639)](https://app.codacy.com/gh/suvrat29/track-expense?utm_source=github.com&utm_medium=referral&utm_content=suvrat29/track-expense&utm_campaign=Badge_Grade_Settings)
+
 An easier way to manage your expenses.
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/5e799eede2204d1095bad874e9f51116)](https://www.codacy.com/gh/suvrat29/track-expense/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=suvrat29/track-expense&amp;utm_campaign=Badge_Grade)
