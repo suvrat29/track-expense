@@ -1,6 +1,6 @@
 export const environment = {
-  production: false,
-  accessToken: "",
+  production: true,
+  accessToken: "te.token",
   apiUrl: "",
   Audience: "",
   Authority: ""
