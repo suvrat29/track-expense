@@ -17,8 +17,6 @@ export class AppLoginComponent {
   faTimes = faTimesCircle;
 
   constructor(private userService: AppUserService, private toast: HotToastService, private tokenService: TokenService) {
-    console.log(process);
-
     this.tokenService.removeToken();
     this.loginForm = new FormGroup({
       email: new FormControl("", [Validators.email, Validators.required]),
