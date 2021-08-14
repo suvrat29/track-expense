@@ -1,7 +1,7 @@
 export const environment = {
   production: true,
-  accessToken: "",
-  apiUrl: "",
+  accessToken: process.env.accessToken,
+  apiUrl: process.env.apiUrl,
   Audience: "",
   Authority: ""
 };

@@ -3,11 +3,10 @@
   "version": "0.0.1",
   "scripts": {
     "ng": "ng",
-    "config": "ts-node ./app.env-config.ts",
-    "start": "npm run config && node server.js",
-    "build": "npm run config && ng build --prod --project=track-expense-login --base-href / && ng build --prod --project=track-expense --base-href /content/",
+    "start": "node server.js",
+    "build": "ng build --prod --project=track-expense-login --base-href / && ng build --prod --project=track-expense --base-href /content/",
     "test": "ng test",
-    "heroku-postbuild": "npm run config && ng build --prod --project=track-expense-login --base-href / && ng build --prod --project=track-expense --base-href /content/"
+    "heroku-postbuild": "ng build --prod --project=track-expense-login --base-href / && ng build --prod --project=track-expense --base-href /content/"
   },
   "engines": {
     "node": "14.17.3",
