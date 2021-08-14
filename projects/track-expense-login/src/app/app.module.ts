@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthInterceptor } from './auth-service/auth.interceptor';
 import { HotToastModule } from '@ngneat/hot-toast';
+import { AppLayoutModule } from '../../../../src/app/layout/app.layout.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { HotToastModule } from '@ngneat/hot-toast';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    HotToastModule.forRoot()
+    HotToastModule.forRoot(),
+    AppLayoutModule
   ],
   providers: [
     {

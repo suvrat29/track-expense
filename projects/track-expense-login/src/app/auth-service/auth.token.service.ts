@@ -21,4 +21,12 @@ export class TokenService {
     localStorage.removeItem(ACCESS_TOKEN);
     localStorage.removeItem("te.email");
   }
+
+  checkLogin(): boolean {
+    if (this.getToken()) {
+      return true;
+    }
+
+    return false;
+  }
 }

@@ -17,6 +17,7 @@ export class AppLoginComponent {
   faTimes = faTimesCircle;
 
   constructor(private userService: AppUserService, private toast: HotToastService, private tokenService: TokenService) {
+    this.tokenService.removeToken();
     this.loginForm = new FormGroup({
       email: new FormControl("", [Validators.email, Validators.required]),
       password: new FormControl("", [Validators.required, Validators.minLength(8)]),
@@ -34,7 +35,7 @@ export class AppLoginComponent {
         error: "Invalid username/password",
       })).subscribe((response: any) => {
         this.tokenService.saveToken(response);
-        window.location.href = "../content/";
+        window.location.href = "../home/";
       }, error => {
         this.isUserSigningIn = false;
       });
