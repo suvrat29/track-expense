@@ -4,7 +4,7 @@ import { AppGuard } from "./app.guard";
 
 const routes: Routes = [
   {
-    path: "",
+    path: "content",
     loadChildren: () => import("./home/app.home.module").then((m) => m.AppHomeModule),
     canActivate: [AppGuard]
   },
@@ -22,7 +22,15 @@ const routes: Routes = [
     path: "app-setup",
     loadChildren: () => import("./setup/app.setup.module").then((m) => m.AppSetupModule),
     canActivate: [AppGuard]
-  }
+  },
+  // {
+  //   path: '404',
+  //   component:
+  // },
+  //{
+  //  path: "**",
+  //  redirectTo:"content"
+  //}
 ];
 
 @NgModule({
