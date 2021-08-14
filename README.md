@@ -1,6 +1,9 @@
 # TrackExpense
 
 An easier way to manage your expenses.
+
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/5e799eede2204d1095bad874e9f51116)](https://www.codacy.com/gh/suvrat29/track-expense/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=suvrat29/track-expense&amp;utm_campaign=Badge_Grade)
+
 This project was generated with [Angulr CLI](https://github.com/angular/angular-cli) version 12.1.1.
 
 ## How to setup
