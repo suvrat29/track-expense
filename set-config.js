@@ -18,10 +18,8 @@ const options2 = {
 
 try {
   let changedFiles = replace.sync(options);
-  console.log('API URL set: ' + apiUrl);
   let changedFiles2 = replace.sync(options2);
-  console.log('ACESS TOKEN set: ' + accessToken);
 }
 catch (error) {
-  console.error('Error occurred:');
+  console.error('Error occurred during setting environment variables.');
 }
