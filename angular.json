@@ -23,7 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "docs/content",
+            "outputPath": "dist/content",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -126,7 +126,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "docs/",
+            "outputPath": "dist/",
             "index": "projects/track-expense-login/src/index.html",
             "main": "projects/track-expense-login/src/main.ts",
             "polyfills": "projects/track-expense-login/src/polyfills.ts",
