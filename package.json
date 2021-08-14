@@ -9,8 +9,15 @@
     "watch:content": "ng build --watch --project=track-expense --base-href /content/ --configuration development",
     "test": "ng test"
   },
+  "engines": {
+    "node": "14.17.3",
+    "npm": "6.14.13"
+  },
   "private": true,
   "dependencies": {
+    "@angular-devkit/build-angular": "~12.1.1",
+    "@angular/cli": "~12.1.1",
+    "@angular/compiler-cli": "~12.1.1",
     "@angular/animations": "^12.1.2",
     "@angular/common": "~12.1.1",
     "@angular/compiler": "~12.1.1",
@@ -24,28 +31,25 @@
     "@fortawesome/free-brands-svg-icons": "^5.15.3",
     "@fortawesome/free-regular-svg-icons": "^5.15.3",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "@types/node": "^12.11.1",
     "@ngneat/hot-toast": "^3.3.0",
     "@ngneat/overview": "^2.0.2",
     "@tailwindcss/forms": "^0.3.3",
     "@tailwindcss/typography": "^0.4.1",
+    "tailwindcss": "^2.2.4",
     "date-fns": "^2.23.0",
+    "typescript": "~4.3.2",
     "rxjs": "~6.6.0",
     "tslib": "^2.2.0",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~12.1.1",
-    "@angular/cli": "~12.1.1",
-    "@angular/compiler-cli": "~12.1.1",
     "@types/jasmine": "~3.6.0",
-    "@types/node": "^12.11.1",
     "jasmine-core": "~3.7.0",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",
     "karma-coverage": "~2.0.3",
     "karma-jasmine": "~4.0.0",
-    "karma-jasmine-html-reporter": "^1.5.0",
-    "tailwindcss": "^2.2.4",
-    "typescript": "~4.3.2"
+    "karma-jasmine-html-reporter": "^1.5.0"
   }
 }
