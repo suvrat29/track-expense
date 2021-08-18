@@ -1,12 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { HotToastService } from '@ngneat/hot-toast';
-import { AppUserService } from '../app.service';
+import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute, Router } from "@angular/router";
+import { HotToastService } from "@ngneat/hot-toast";
+import { AppUserService } from "../app.service";
 
 @Component({
-  selector: 'email-verified',
-  templateUrl: './app.email-verified.component.html',
-  styleUrls: ['./app.email-verified.component.scss']
+  selector: "email-verified",
+  templateUrl: "./app.email-verified.component.html",
+  styleUrls: ["./app.email-verified.component.scss"]
 })
 
 export class AppEmailVerifiedComponent implements OnInit {
@@ -27,9 +27,9 @@ export class AppEmailVerifiedComponent implements OnInit {
     post.resetkey = this.resetkey;
 
     this.userService.verifyUser(post).pipe(this.toast.observe({
-      loading: 'Please wait...',
-      success: 'Your account has been successfully verified',
-      error: 'Failed to verify your account. Please try again later',
+      loading: "Please wait...",
+      success: "Your account has been successfully verified",
+      error: "Failed to verify your account. Please try again later",
     })).subscribe((response) => {
       if (response)
         this.verificationSuccess = 1;

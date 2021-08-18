@@ -6,9 +6,9 @@ import { AppUserService } from "../app.service";
 import { TokenService } from "../auth-service/auth.token.service";
 
 @Component({
-  selector: 'login',
-  templateUrl: './app.login.component.html',
-  styleUrls: ['./app.login.component.scss']
+  selector: "login",
+  templateUrl: "./app.login.component.html",
+  styleUrls: ["./app.login.component.scss"]
 })
 
 export class AppLoginComponent {

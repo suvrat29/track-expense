@@ -1,14 +1,14 @@
-import { Component } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
-import { faTimesCircle } from '@fortawesome/free-regular-svg-icons';
-import { HotToastService } from '@ngneat/hot-toast';
-import { AppUserService } from '../app.service';
+import { Component } from "@angular/core";
+import { FormControl, FormGroup, Validators } from "@angular/forms";
+import { ActivatedRoute, Router } from "@angular/router";
+import { faTimesCircle } from "@fortawesome/free-regular-svg-icons";
+import { HotToastService } from "@ngneat/hot-toast";
+import { AppUserService } from "../app.service";
 
 @Component({
-  selector: 'reset-password',
-  templateUrl: './app.reset-password.component.html',
-  styleUrls: ['./app.reset-password.component.scss']
+  selector: "reset-password",
+  templateUrl: "./app.reset-password.component.html",
+  styleUrls: ["./app.reset-password.component.scss"]
 })
 
 export class AppResetPasswordComponent {
@@ -40,9 +40,9 @@ export class AppResetPasswordComponent {
       post.password = formData.value.password;
 
       this.userService.resetPassword(post).pipe(this.toast.observe({
-        loading: 'Please wait...',
-        success: 'Password reset successfully',
-        error: 'Failed to reset password. Please try again later',
+        loading: "Please wait...",
+        success: "Password reset successfully",
+        error: "Failed to reset password. Please try again later",
       })).subscribe((response: any) => {
         this.resetSuccess = 1;
       }, error => {

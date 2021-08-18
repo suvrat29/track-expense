@@ -1,14 +1,14 @@
-import { Component } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-import { faTimesCircle } from '@fortawesome/free-regular-svg-icons';
-import { HotToastService } from '@ngneat/hot-toast';
-import { AppUserService } from '../app.service';
+import { Component } from "@angular/core";
+import { FormControl, FormGroup, Validators } from "@angular/forms";
+import { Router } from "@angular/router";
+import { faTimesCircle } from "@fortawesome/free-regular-svg-icons";
+import { HotToastService } from "@ngneat/hot-toast";
+import { AppUserService } from "../app.service";
 
 @Component({
-  selector: 'register',
-  templateUrl: './app.register.component.html',
-  styleUrls: ['./app.register.component.scss']
+  selector: "register",
+  templateUrl: "./app.register.component.html",
+  styleUrls: ["./app.register.component.scss"]
 })
 
 export class AppRegisterComponent {
@@ -40,9 +40,9 @@ export class AppRegisterComponent {
     this.isFormSubmit = true;
     if (formData.status === "VALID") {
       this.userService.registerUser(formData.value).pipe(this.toast.observe({
-        loading: 'Registering your account...',
-        success: 'You have been registered successfully',
-        error: 'We were unable to register your account',
+        loading: "Registering your account...",
+        success: "You have been registered successfully",
+        error: "We were unable to register your account",
       })).subscribe((response: any) => {
         if (response)
           this.isRegistrationCompleted = true;
