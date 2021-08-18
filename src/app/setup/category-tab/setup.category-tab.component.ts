@@ -52,8 +52,24 @@ export class SetupCategoryComponent implements OnInit {
         this._noData = false;
         this.categoryData = response;
         this.categoryData.forEach((value: ICategoryData) => {
-          if (value.icon.length > 0) {
-            value.iconSafe = this.sanitizer.bypassSecurityTrustHtml(value.icon);        //This is needed to render images from SVG
+          if (value.icon) {
+            if (value.icon.length > 0) {
+              value.iconSafe = this.sanitizer.bypassSecurityTrustHtml(value.icon);        //This is needed to render images from SVG
+            } else {
+              value.iconSafe = "";
+              value.icon = "";
+            }
+          } else {
+            value.iconSafe = "";
+            value.icon = "";
+          }
+          
+          if (value.description) {
+            if (value.description.length == 0) {
+              value.description = "";
+            }
+          } else {
+            value.description = "";
           }
         });
       } else {
@@ -178,8 +194,8 @@ export class SetupCategoryComponent implements OnInit {
 
     data.name = formData.controls["name"].value;
     data.type = formData.controls["type"].value;
-    data.icon = formData.controls["icon"].value;
-    data.description = formData.controls["description"].value;
+    data.icon = formData.controls["icon"].value != null && formData.controls["icon"].value != undefined ? formData.controls["icon"].value : "";
+    data.description = formData.controls["description"].value != null && formData.controls["description"].value != undefined ? formData.controls["description"].value : "";
 
     return data;
   }
@@ -219,6 +235,9 @@ export class SetupCategoryComponent implements OnInit {
       this.modalService.close(id);
     } else {
       this.categoryForm.reset();
+      this.categoryForm.controls["type"].setValue("");
+      this.categoryForm.controls["icon"].setValue("");
+      this.categoryForm.controls["description"].setValue("");
     }
   }
 
