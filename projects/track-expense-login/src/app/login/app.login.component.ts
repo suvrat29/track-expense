@@ -30,7 +30,6 @@ export class AppLoginComponent {
     
     if (formData.status === "VALID") {
       this.userService.login(formData.value).pipe(this.toast.observe({
-        loading: "Logging in...",
         success: "You have been logged in successfully",
         error: "Invalid username/password",
       })).subscribe((response: any) => {
