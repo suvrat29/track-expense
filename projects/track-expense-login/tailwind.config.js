@@ -1,11 +1,11 @@
 module.exports = {
     prefix: '',
-    purge: {
-      enabled: process.env.NODE_ENV === 'production',
-      content: [
-        './src/**/*.{html,ts}',
-      ]
-    },
+    //purge: {        //TODO: Fix this
+    //  enabled: process.env.NODE_ENV === 'production',
+    //  content: [
+    //    './src/**/*.{html,ts}',
+    //  ]
+    //},
     darkMode: 'class', // or 'media' or 'class'
     theme: {
       extend: {},

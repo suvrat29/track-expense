@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { environment } from "src/environments/environment";
+import { environment } from "../../../projects/track-expense-login/src/environments/environment.prod";
 
 const ACCESS_TOKEN = environment.accessToken;
 

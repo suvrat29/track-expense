@@ -3,17 +3,24 @@
   "version": "0.0.1",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --base-href /",
-    "build": "ng build --project=track-expense-login --base-href / && ng build --project=track-expense --base-href /content/",
-    "watch:login": "ng build --watch --project=track-expense-login --base-href / --configuration development",
-    "watch:content": "ng build --watch --project=track-expense --base-href /content/ --configuration development",
-    "test": "ng test"
+    "start": "node server.js",
+    "setconf": "node ./set-config.js",
+    "build": "npm run setconf && ng build --prod --project=track-expense-login --base-href / && ng build --prod --project=track-expense --base-href /content/",
+    "test": "ng test",
+    "heroku-postbuild": "npm run setconf && ng build --prod --project=track-expense-login --base-href / && ng build --prod --project=track-expense --base-href /content/"
+  },
+  "engines": {
+    "node": "14.17.3",
+    "npm": "6.14.13"
   },
   "private": true,
   "dependencies": {
+    "@angular-devkit/build-angular": "~12.1.1",
     "@angular/animations": "^12.1.2",
+    "@angular/cli": "~12.1.1",
     "@angular/common": "~12.1.1",
     "@angular/compiler": "~12.1.1",
+    "@angular/compiler-cli": "~12.1.1",
     "@angular/core": "~12.1.1",
     "@angular/forms": "~12.1.1",
     "@angular/platform-browser": "~12.1.1",
@@ -28,24 +35,24 @@
     "@ngneat/overview": "^2.0.2",
     "@tailwindcss/forms": "^0.3.3",
     "@tailwindcss/typography": "^0.4.1",
+    "@types/node": "^12.11.1",
     "date-fns": "^2.23.0",
+    "express": "^4.17.1",
+    "path": "^0.12.7",
+    "replace-in-file": "^6.2.0",
     "rxjs": "~6.6.0",
+    "tailwindcss": "^2.2.4",
     "tslib": "^2.2.0",
+    "typescript": "~4.3.2",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~12.1.1",
-    "@angular/cli": "~12.1.1",
-    "@angular/compiler-cli": "~12.1.1",
     "@types/jasmine": "~3.6.0",
-    "@types/node": "^12.11.1",
     "jasmine-core": "~3.7.0",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",
     "karma-coverage": "~2.0.3",
     "karma-jasmine": "~4.0.0",
-    "karma-jasmine-html-reporter": "^1.5.0",
-    "tailwindcss": "^2.2.4",
-    "typescript": "~4.3.2"
+    "karma-jasmine-html-reporter": "^1.5.0"
   }
 }

@@ -2,7 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
 import { HotToastService } from "@ngneat/hot-toast";
-import { environment } from "src/environments/environment";
+import { environment } from "../environments/environment.prod";
 import { TokenService } from "./auth-service/auth.token.service";
 
 const API_URL = environment.apiUrl;

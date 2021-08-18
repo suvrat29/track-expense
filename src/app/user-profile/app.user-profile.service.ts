@@ -1,6 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { environment } from "src/environments/environment";
+import { environment } from "../../../projects/track-expense-login/src/environments/environment.prod";
 import { IUserProfileData, IUserProfileUpdateData } from "./app.user-profile-interfaces";
 
 const API_URL = environment.apiUrl;
