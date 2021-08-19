@@ -1,6 +1,6 @@
 <!--START: Category Cards-->
 <ng-container *ngIf="!_pageLoad && !_noData && !_pageError">
-  <div class="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-6">
+  <div class="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
     <div class="h-14 lg:w-72 md:w-auto md:mr-6 bg-white rounded-lg shadow flex flex-row mb-4 relative" *ngFor="let category of categoryData">
       <div class="w-20 rounded-tl-lg rounded-bl-lg text-white text-sm flex flex-wrap content-center justify-center" [ngClass]="{'bg-red-500': category.type == 0, 'bg-green-400': category.type == 1}">
         <ng-container *ngIf="category.icon.length == 0">{{category.name.charAt(0)}}</ng-container>
