@@ -1,8 +1,10 @@
 <app-layout-header></app-layout-header>
 <app-update-banner *ngIf="isAppUpdated" (isBannerDismissed)="hideUpdateBanner()"></app-update-banner>
 
-<div class="bg-gray-100 subpixel-antialiased" [ngClass]="{'h-screensize': !isAppUpdated, 'h-screensize-withbanner': isAppUpdated}">
+<div class="subpixel-antialiased">
   <main id="main-content">
+    <div class="mt-9 sm:mt-6 mx-4 2xl:mx-24 xl:mx-20 lg:mx-6">
       <router-outlet></router-outlet>
+    </div>
   </main>
 </div>

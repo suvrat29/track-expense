@@ -1,7 +1,7 @@
 <!--START: Category Cards-->
 <ng-container *ngIf="!_pageLoad && !_noData && !_pageError">
-  <div class="mt-4 grid grid-cols-1 sm:grid-cols-4">
-    <div class="h-14 w-72 bg-white rounded-lg shadow flex flex-row mb-4 relative" *ngFor="let category of categoryData">
+  <div class="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
+    <div class="h-14 lg:w-72 md:w-auto md:mr-6 bg-white rounded-lg shadow flex flex-row mb-4 relative" *ngFor="let category of categoryData">
       <div class="w-20 rounded-tl-lg rounded-bl-lg text-white text-sm flex flex-wrap content-center justify-center" [ngClass]="{'bg-red-500': category.type == 0, 'bg-green-400': category.type == 1}">
         <ng-container *ngIf="category.icon.length == 0">{{category.name.charAt(0)}}</ng-container>
         <ng-container *ngIf="category.icon.length > 0"><div [innerHTML]="category.iconSafe"></div></ng-container>
@@ -45,24 +45,24 @@
 <ng-container *ngIf="showModal">
   <te-modal id="setup-category-modal">
     <form [formGroup]="categoryForm" (ngSubmit)="processCategoryRequest(categoryForm)">
-      <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-        <div class="sm:flex sm:items-start">
-          <div class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-green-100 sm:mx-0 sm:h-10 sm:w-10">
+      <div class="bg-white px-4 pt-5 pb-4 lg:p-6 lg:pb-4">
+        <div class="lg:flex lg:items-start">
+          <div class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-green-100 lg:mx-0 lg:h-10 lg:w-10">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-diagram-3" viewBox="0 0 16 16">
               <path fill-rule="evenodd" d="M6 3.5A1.5 1.5 0 0 1 7.5 2h1A1.5 1.5 0 0 1 10 3.5v1A1.5 1.5 0 0 1 8.5 6v1H14a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0v-1A.5.5 0 0 1 2 7h5.5V6A1.5 1.5 0 0 1 6 4.5v-1zM8.5 5a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1zM0 11.5A1.5 1.5 0 0 1 1.5 10h1A1.5 1.5 0 0 1 4 11.5v1A1.5 1.5 0 0 1 2.5 14h-1A1.5 1.5 0 0 1 0 12.5v-1zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zm4.5.5A1.5 1.5 0 0 1 7.5 10h1a1.5 1.5 0 0 1 1.5 1.5v1A1.5 1.5 0 0 1 8.5 14h-1A1.5 1.5 0 0 1 6 12.5v-1zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zm4.5.5a1.5 1.5 0 0 1 1.5-1.5h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1a1.5 1.5 0 0 1-1.5-1.5v-1zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1z" />
             </svg>
           </div>
-          <div class="mt-3 sm:w-4/5 text-center sm:mt-2 sm:ml-4 sm:text-left">
+          <div class="mt-3 lg:w-4/5 text-center lg:mt-2 lg:ml-4 lg:text-left">
             <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">
               <span *ngIf="_editCategory">Edit </span><span *ngIf="!_editCategory">Add </span>new category
             </h3>
             <div class="mt-2">
               <div class="py-5 bg-white space-y-2">
-                <div class="grid grid-cols-1 sm:grid-cols-2">
+                <div class="grid grid-cols-1 lg:grid-cols-2">
                   <label for="category-name" class="block text-sm font-medium text-gray-700 pt-2">Category name</label>
-                  <input type="text" name="category-name" id="category-name" autocomplete="category-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" formControlName="name">
+                  <input type="text" name="category-name" id="category-name" autocomplete="category-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm lg:text-sm border-gray-300 rounded-md" formControlName="name">
                 </div>
-                <div class="pt-1 text-sm text-red-600 grid grid-cols-1 sm:grid-cols-2" *ngIf="categoryForm.controls['name'].invalid && (categoryForm.controls['name'].dirty || categoryForm.controls['name'].touched)">
+                <div class="pt-1 text-sm text-red-600 grid grid-cols-1 lg:grid-cols-2" *ngIf="categoryForm.controls['name'].invalid && (categoryForm.controls['name'].dirty || categoryForm.controls['name'].touched)">
                   <div></div>
                   <div class="flex">
                     <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-x-circle mt-1" viewBox="0 0 16 16">
@@ -73,21 +73,21 @@
                   </div>
                 </div>
 
-                <div class="hidden sm:block" aria-hidden="true">
+                <div class="hidden lg:block" aria-hidden="true">
                   <div class="py-2">
                     <div class="border-t border-gray-200"></div>
                   </div>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2">
+                <div class="grid grid-cols-1 lg:grid-cols-2">
                   <label for="type" class="block text-sm font-medium text-gray-700 pt-2">Type</label>
-                  <select id="type" name="type" autocomplete="type" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" (change)="changeType($event)" formControlName="type">
+                  <select id="type" name="type" autocomplete="type" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 lg:text-sm" (change)="changeType($event)" formControlName="type">
                     <option value="">---Selct an option---</option>
                     <option value="0">Expense</option>
                     <option value="1">Income</option>
                   </select>
                 </div>
-                <div class="pt-1 text-sm text-red-600 grid grid-cols-1 sm:grid-cols-2" *ngIf="categoryForm.controls['type'].invalid && (categoryForm.controls['type'].dirty || categoryForm.controls['type'].touched)">
+                <div class="pt-1 text-sm text-red-600 grid grid-cols-1 lg:grid-cols-2" *ngIf="categoryForm.controls['type'].invalid && (categoryForm.controls['type'].dirty || categoryForm.controls['type'].touched)">
                   <div></div>
                   <div class="flex">
                     <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-x-circle mt-1" viewBox="0 0 16 16">
@@ -98,38 +98,38 @@
                   </div>
                 </div>
 
-                <div class="hidden sm:block" aria-hidden="true">
+                <div class="hidden lg:block" aria-hidden="true">
                   <div class="py-2">
                     <div class="border-t border-gray-200"></div>
                   </div>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2">
+                <div class="grid grid-cols-1 lg:grid-cols-2">
                   <label for="icon-name" class="block text-sm font-medium text-gray-700 pt-2">Icon</label>
-                  <textarea type="text" name="icon-name" id="icon-name" autocomplete="icon-name" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md" formControlName="icon"></textarea>
+                  <textarea type="text" name="icon-name" id="icon-name" autocomplete="icon-name" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full lg:text-sm border border-gray-300 rounded-md" formControlName="icon"></textarea>
                 </div>
 
-                <div class="hidden sm:block" aria-hidden="true">
+                <div class="hidden lg:block" aria-hidden="true">
                   <div class="py-2">
                     <div class="border-t border-gray-200"></div>
                   </div>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2">
+                <div class="grid grid-cols-1 lg:grid-cols-2">
                   <label for="description" class="block text-sm font-medium text-gray-700 pt-2">Description</label>
-                  <textarea type="text" name="description" id="description" autocomplete="description" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md" formControlName="description"></textarea>
+                  <textarea type="text" name="description" id="description" autocomplete="description" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full lg:text-sm border border-gray-300 rounded-md" formControlName="description"></textarea>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-        <button type="submit" class="ml-2 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white text-base" [disabled]="_formSubmit || categoryForm.invalid" [ngClass]="{'bg-gray-300 hover:bg-gray-300 focus:outline-none': (_formSubmit || categoryForm.invalid), 'bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500' : (!_formSubmit && !categoryForm.invalid)}">
+      <div class="bg-gray-50 px-4 py-3 px-6 flex flex-row-reverse">
+        <button type="submit" class="mt-3 ml-2 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white text-base" [disabled]="_formSubmit || categoryForm.invalid" [ngClass]="{'bg-gray-300 hover:bg-gray-300 focus:outline-none': (_formSubmit || categoryForm.invalid), 'bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500' : (!_formSubmit && !categoryForm.invalid)}">
           Submit
         </button>
 
-        <button type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm" (click)="closeModal('setup-category-modal');">
+        <button type="button" class="mt-3 inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ml-3 sm:w-auto sm:text-sm" (click)="closeModal('setup-category-modal');">
           Cancel
         </button>
       </div>
@@ -162,12 +162,12 @@
         </div>
       </div>
     </div>
-    <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-      <button type="button" class="ml-2 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white text-base bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500" (click)="deleteCategory(_deleteId);">
+    <div class="bg-gray-50 px-4 py-3 sm:px-6 flex flex-row-reverse">
+      <button type="button" class="mt-3 ml-2 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white text-base bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500" (click)="deleteCategory(_deleteId);">
         Delete
       </button>
 
-      <button type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm" (click)="closeModal('delete-category-modal');">
+      <button type="button" class="mt-3 inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ml-3 sm:w-auto sm:text-sm" (click)="closeModal('delete-category-modal');">
         Cancel
       </button>
     </div>
