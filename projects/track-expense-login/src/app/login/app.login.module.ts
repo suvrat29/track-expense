@@ -1,14 +1,13 @@
-import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
-import { AppLoginComponent } from './app.login.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { RouterModule, Routes } from '@angular/router';
-import { CommonModule } from '@angular/common';
+import { NgModule } from "@angular/core";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { AppLoginComponent } from "./app.login.component";
+import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
+import { RouterModule, Routes } from "@angular/router";
+import { CommonModule } from "@angular/common";
 
 const routes: Routes = [
     {
-      path: '',
+      path: "",
       component: AppLoginComponent
     }
   ];

@@ -1,12 +1,11 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { AuthInterceptor } from './auth-service/auth.interceptor';
-import { HotToastModule } from '@ngneat/hot-toast';
-import { AppLayoutModule } from '../../../../src/app/layout/app.layout.module';
+import { NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
+import { AppRoutingModule } from "./app-routing.module";
+import { AppComponent } from "./app.component";
+import { AuthInterceptor } from "./auth-service/auth.interceptor";
+import { HotToastModule } from "@ngneat/hot-toast";
+import { AppLayoutModule } from "../../../../src/app/layout/app.layout.module";
 
 @NgModule({
   declarations: [
@@ -28,4 +27,5 @@ import { AppLayoutModule } from '../../../../src/app/layout/app.layout.module';
   ],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
