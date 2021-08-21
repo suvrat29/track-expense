@@ -24,6 +24,7 @@ export class SetupSubCategoryComponent implements OnInit {
   _subcategoryError: boolean = false;
   _categorySelected: boolean = false;
   enableActions: boolean = false;
+  actionMenu: boolean = false;
   showModal: boolean = false;
   _editSubcategory: boolean = false;
   _formSubmit: boolean = false;
