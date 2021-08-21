@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
-import { DomSanitizer } from "@angular/platform-browser";
 import { HotToastService } from "@ngneat/hot-toast";
 import { Subject } from "rxjs";
 import { ModalService } from "../../common/modal-component/modal.service";
@@ -28,7 +27,7 @@ export class SetupCategoryComponent implements OnInit {
   _deleteId: number = 0;
   _updateId: number = 0;
 
-  constructor(private modalService: ModalService, private setupService: AppSetupService, private toast: HotToastService, private sanitizer: DomSanitizer) {
+  constructor(private modalService: ModalService, private setupService: AppSetupService, private toast: HotToastService) {
     this.categoryForm = new FormGroup({
       name: new FormControl("", [Validators.required]),
       type: new FormControl("", [Validators.required]),
@@ -46,32 +45,11 @@ export class SetupCategoryComponent implements OnInit {
   }
 
   getCategoriesList() {
-    this.setupService.getAllCategories().subscribe((response: Array<ICategoryData>) => {
+    this.setupService.getAllCategories(true).subscribe((response: Array<ICategoryData>) => {
       this._pageLoad = false;
       if (response.length > 0) {
         this._noData = false;
-        this.categoryData = response;
-        this.categoryData.forEach((value: ICategoryData) => {
-          if (value.icon) {
-            if (value.icon.length > 0) {
-              value.iconSafe = this.sanitizer.bypassSecurityTrustHtml(value.icon);        //This is needed to render images from SVG
-            } else {
-              value.iconSafe = "";
-              value.icon = "";
-            }
-          } else {
-            value.iconSafe = "";
-            value.icon = "";
-          }
-          
-          if (value.description) {
-            if (value.description.length == 0) {
-              value.description = "";
-            }
-          } else {
-            value.description = "";
-          }
-        });
+        this.categoryData = this.setupService.processCategoryListData(response);
       } else {
         this._noData = true;
       }
@@ -234,6 +212,7 @@ export class SetupCategoryComponent implements OnInit {
     if (id === "delete-category-modal") {
       this.modalService.close(id);
     } else {
+      this.modalService.close(id);
       this.categoryForm.reset();
       this.categoryForm.controls["type"].setValue("");
       this.categoryForm.controls["icon"].setValue("");

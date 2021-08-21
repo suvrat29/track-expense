@@ -12,7 +12,7 @@
             {{category.name}}
           </span>
           <span class="text-sm text-gray-500 font-medium">
-            0 Subcategories
+            {{category.subcategorycount}} <ng-container *ngIf="category.subcategorycount <= 1">Subcategory</ng-container> <ng-container *ngIf="category.subcategorycount > 1">Subcategories</ng-container>
           </span>
         </div>
         <div class="ml-auto flex flex-wrap content-center" *ngIf="enableActions">
@@ -41,7 +41,7 @@
   <span class="text-sm text-gray-400">Loading data, please wait...</span>
 </div>
 <!--END: Category Cards-->
-<!--START: Add new category modal-->
+<!--START: Add new/Edit category modal-->
 <ng-container *ngIf="showModal">
   <te-modal id="setup-category-modal">
     <form [formGroup]="categoryForm" (ngSubmit)="processCategoryRequest(categoryForm)">
@@ -136,7 +136,7 @@
     </form>
   </te-modal>
 </ng-container>
-<!--END: Add new category modal-->
+<!--END: Add new/Edit category modal-->
 <!--START: Category deletion confirmation-->
 <ng-container *ngIf="showDeleteModal">
   <te-modal id="delete-category-modal">
