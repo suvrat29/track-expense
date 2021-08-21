@@ -59,9 +59,11 @@ export class SetupSubCategoryComponent implements OnInit {
     });
   }
 
-  getSubcategoriesList(categoryName: string, categoryId: number) {
+  getSubcategoriesList(categoryName: string, categoryId: number, dataUpdate: boolean) {
     this._selectedCategoryData = this.categoryData.find((x) => x.id === categoryId)!;
-    this._subcategoryLoad = true;
+    if (!dataUpdate) {
+      this._subcategoryLoad = true;
+    }
     this.setupService.getAllSubcategoriesByCategory(categoryId).subscribe((response: Array<ISubcategoryData>) => {
       if (response.length > 0) {
         this.subcategoryData = this.setupService.processSubcategoryListData(response);
@@ -152,7 +154,7 @@ export class SetupSubCategoryComponent implements OnInit {
         })).subscribe((response: boolean) => {
           if (response) {
             this.closeModal('setup-subcategory-modal');
-            this.getSubcategoriesList(this._selectedCategoryData.name, this._selectedCategoryData.id);
+            this.getSubcategoriesList(this._selectedCategoryData.name, this._selectedCategoryData.id, true);
           }
           else {
             this._formSubmit = false;
@@ -175,7 +177,7 @@ export class SetupSubCategoryComponent implements OnInit {
         })).subscribe((response: boolean) => {
           if (response) {
             this.closeModal('setup-subcategory-modal');
-            this.getSubcategoriesList(this._selectedCategoryData.name, this._selectedCategoryData.id);
+            this.getSubcategoriesList(this._selectedCategoryData.name, this._selectedCategoryData.id, true);
           }
           else {
             this._formSubmit = false;
@@ -218,7 +220,7 @@ export class SetupSubCategoryComponent implements OnInit {
       error: "Failed to delete subcategory"
     })).subscribe((response: boolean) => {
       if (response) {
-        this.getSubcategoriesList(this._selectedCategoryData.name, this._selectedCategoryData.id);
+        this.getSubcategoriesList(this._selectedCategoryData.name, this._selectedCategoryData.id, true);
         this.closeModal("delete-subcategory-modal");
       } else {
         this.toast.error("Failed to delete subcategory");
