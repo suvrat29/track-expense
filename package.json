@@ -4,13 +4,13 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --base-href /",
-    "build": "ng build --project=track-expense-login --base-href / && ng build --project=track-expense --base-href /content/",
+    "build": "ng build --prod --build-optimizer --project=track-expense-login --base-href / && ng build --prod --build-optimizer --project=track-expense --base-href /content/",
     "watch:login": "ng build --watch --project=track-expense-login --base-href / --configuration development",
     "watch:content": "ng build --watch --project=track-expense --base-href /content/ --configuration development",
     "test": "ng test",
     "heroku-start": "node server.js",
     "setconf": "node ./set-config.js",
-    "heroku-postbuild": "npm run setconf && ng build --prod --project=track-expense-login --base-href / && ng build --prod --project=track-expense --base-href /content/"
+    "heroku-postbuild": "npm run setconf && ng build --prod --build-optimizer --project=track-expense-login --base-href / && ng build --prod --build-optimizer --project=track-expense --base-href /content/"
   },
   "engines": {
     "node": "14.17.3",
