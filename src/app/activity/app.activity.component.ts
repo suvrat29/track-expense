@@ -2,8 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { HotToastService } from "@ngneat/hot-toast";
 import { IUserActivityLog } from "./app.activity.interface";
 import { AppActivityService } from "./app.activity.service";
-import { formatDistanceToNow } from 'date-fns'
-import { parseISO } from 'date-fns'
+import { formatDistanceToNow } from "date-fns";
+import { parseISO } from "date-fns";
 import { AppCommonService } from "../common/common.service";
 
 @Component({
