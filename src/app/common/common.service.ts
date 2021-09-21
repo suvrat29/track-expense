@@ -18,4 +18,12 @@ export class AppCommonService {
   checkAppUpdates() {
 
   }
+
+  /*It gets correct (local) date and time from ISO string.
+   * Used with date-fns parseISO()*/
+  adjustForTimezone(date: Date): Date {
+    var timeOffsetInMS: number = date.getTimezoneOffset() * 60000;
+    date.setTime(date.getTime() - timeOffsetInMS);
+    return date
+  }
 }
