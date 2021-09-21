@@ -1,6 +1,8 @@
+import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { AppActivityComponent } from "./app.activity.component";
+import { AppActivityService } from "./app.activity.service";
 
 const routes: Routes = [
   {
@@ -14,7 +16,11 @@ const routes: Routes = [
     AppActivityComponent
   ],
   imports: [
+    CommonModule,
     RouterModule.forChild(routes)
+  ],
+  providers: [
+    AppActivityService
   ]
 })
 
