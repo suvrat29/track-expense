@@ -6,4 +6,5 @@ export interface IUserActivityLog {
   actiondate: string;
   actionfield1: string;
   actionfield2: string;
+  actiontext: string;
 }
