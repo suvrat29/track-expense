@@ -13,7 +13,7 @@
 
 <div class="bg-white border border-gray-200 shadow rounded-md sm:overflow-hidden">
   <ng-container *ngIf="!_pageLoad && !_noData && !_pageError">
-    <div class="flex flex-col w-full px-9" *ngFor="let activity of userActivityLogData">
+    <div class="flex flex-col w-full px-2 md:px-9" *ngFor="let activity of userActivityLogData">
       <div class="flex">
         <span class="ml-3.5 border-2 border-blue-500 h-5"></span>
       </div>
@@ -53,37 +53,29 @@
         </div>
         <div class="flex flex-wrap content-center justify-center px-4 bg-white">
           <div>
-            <span class="text-base">
-              <span class="font-medium text-gray-500">
-                <ng-container *ngIf="activity.activitytype == 0">Profile </ng-container>
-                <ng-container *ngIf="activity.activitytype == 1">Category </ng-container>
-                <ng-container *ngIf="activity.activitytype == 2">Subcategory </ng-container>
-                <ng-container *ngIf="activity.activitytype == 3">Income </ng-container>
-                <ng-container *ngIf="activity.activitytype == 4">Expense </ng-container>
-              </span>
-              <span class="font-semibold" *ngIf="activity.actionfield1.length > 0">{{activity.actionfield1}} </span>
-              <span class="font-semibold" *ngIf="activity.actionfield2.length > 0">{{activity.actionfield2}} </span>
-              <span class="font-medium text-gray-500">was </span>
-              <span class="font-bold" [ngClass]="{'text-green-500': activity.actiontype == 0, 'text-red-500': activity.actiontype == 1, 'text-yellow-500': activity.actiontype == 2}">
-                <ng-container *ngIf="activity.actiontype == 0">added. </ng-container>
-                <ng-container *ngIf="activity.actiontype == 1">deleted.</ng-container>
-                <ng-container *ngIf="activity.actiontype == 2">modified.</ng-container>
-              </span>
+            <span class="text-base hidden md:inline">
+              <span [innerHTML]="activity.actiontext"></span>
+            </span>
+            <span class="text-base md:hidden">
+              <span [innerHTML]="activity.actiontext.length > 160 ? (activity.actiontext | slice:0:150) + '...' : activity.actiontext"></span>
             </span>
           </div>
         </div>
-        <div class="flex flex-wrap content-center justify-center px-4 bg-white ml-auto">
+        <div class="flex flex-wrap content-center justify-center md:px-4 bg-white ml-auto">
           <div class="border rounded-full px-4">
             <div>
-              <span class="text-sm font-semibold" [ngClass]="{'text-green-500': activity.actiontype == 0, 'text-red-500': activity.actiontype == 1, 'text-yellow-500': activity.actiontype == 2}">
+              <span class="text-sm font-semibold hidden md:inline" [ngClass]="{'text-green-500': activity.actiontype == 0, 'text-red-500': activity.actiontype == 1, 'text-yellow-500': activity.actiontype == 2}">
                 {{activity.actiondate}}
+              </span>
+              <span class="text-sm font-semibold md:hidden" [ngClass]="{'text-green-500': activity.actiontype == 0, 'text-red-500': activity.actiontype == 1, 'text-yellow-500': activity.actiontype == 2}">
+                {{(activity.actiondate.length > 6) ? (activity.actiondate | slice:0:6) + '...' : (activity.actiondate)}}
               </span>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="flex px-9">
+    <div class="flex px-2 md:px-9">
       <span class="ml-3.5 border-2 border-blue-500 h-5"></span>
     </div>
   </ng-container>
